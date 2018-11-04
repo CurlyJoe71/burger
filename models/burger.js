@@ -6,7 +6,7 @@ const burger = {
             cb(result);
         });
     },
-    new: function(newBurger, devoured, cb) {
+    create: function(newBurger, devoured, cb) {
         orm.insertOne(newBurger, devoured, function(result) {
             cb(result);
         });
