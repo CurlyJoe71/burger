@@ -4,9 +4,13 @@
 
 <ul>
     {{#each burgers}}
-     {{#unless devoured}}
+        {{#unless devoured}}    
+       <p>#{{id}} - {{burger_name}}</p>
+       <button class="change-devour" data-id={{id}} data-status={{devoured}}>EAT ME!</button>
+     {{!-- {{#unless devoured}}
          {{> burgers/burger-block devoured=true}}
-     {{/unless}}
+     {{/unless}} --}}
+        {{/unless}}
     {{/each}}
 </ul>
 
@@ -14,8 +18,12 @@
 
 <ul>
     {{#each burgers}}
-        {{#if devoured}}
+     {{#if devoured}}
+       <p>#{{id}} - {{burger_name}}</p>
+              <button class="change-devour" data-id={{id}} data-status={{devoured}}>VOMIT!</button>
+        {{!-- {{#if devoured}}
             {{> burgers/burger-block devoured=false}}
+        {{/if}} --}}
         {{/if}}
     {{/each}}
 </ul>
