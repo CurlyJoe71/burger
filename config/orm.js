@@ -30,7 +30,13 @@ const orm = {
         })
     },
     insertOne: function(newBurger, devoured, cb) {
-        connection.query('INSERT INTO burgers (burger_name, devoured) VALUES ?', [newBurger, devoured], function(err, result) {
+        let queryString = 'INSERT INTO burgers (burger_name, devoured) VALUES ("';
+        queryString += newBurger;
+        queryString += '", ';
+        queryString += devoured;
+        queryString += ')';
+        console.log(queryString);
+        connection.query(queryString, function(err, result) {
             if (err) throw error;
             cb(result);
         })
