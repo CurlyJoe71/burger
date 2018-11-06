@@ -5,37 +5,37 @@
   <h3>
     These burgers are waiting to be devoured...
   </h3>
-  <ul>
+   
     {{#each burgers}}
       {{#unless devoured}}
-        <div class="burger">
+        <div class="burger animation">
           <p>
             #
             {{id}}
             -
             {{burger_name}}
           </p>
-          <button class="change-devour" data-id={{id}} data-status={{devoured}}>
+          <button class="change-devour bun" data-id={{id}} data-status={{devoured}}>
             EAT ME!
           </button>
         </div>
       {{/unless}}
     {{/each}}
-  </ul>
+  
   <h3>
     You've already devoured these burgers...
   </h3>
   <ul>
     {{#each burgers}}
       {{#if devoured}}
-      <div class="burger">
+      <div class="burger animation">
         <p>
           #
           {{id}}
           -
           {{burger_name}}
         </p>
-        <button class="change-devour" data-id={{id}} data-status={{devoured}}>
+        <button class="change-devour vomit" data-id={{id}} data-status={{devoured}}>
           VOMIT!
         </button>
         </div>
@@ -52,7 +52,7 @@
       </label>
       <input type="text" id="sammie" name="name" />
     </div>
-    <button type="submit">
+    <button class="bun" type="submit">
       Add Burger!
     </button>
   </form>
