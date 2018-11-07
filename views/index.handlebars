@@ -2,12 +2,12 @@
   <h1>
     Burger Time!
   </h1>
-  <h3>
-    These burgers are waiting to be devoured...
-  </h3>
    
     {{#each burgers}}
       {{#unless devoured}}
+  <h3>
+    These burgers are waiting to be devoured...
+  </h3>
         <div class="burger animation">
           <p>
             #
@@ -18,8 +18,8 @@
           <button class="change-devour bun" data-id={{id}} data-status={{devoured}}>
             EAT ME!
           </button>
-        </div>
-      {{/unless}}
+        </div>   
+      {{/unless}}    
     {{/each}}
   
   <h3>
